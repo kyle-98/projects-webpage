@@ -9,11 +9,19 @@ var scale, x, y;
 let link = document.getElementById('img-link');
 
 function upload_image(event){
-    var download_link = "";
+    image_edit(URL.createObjectURL(event.target.files[0]));
+}
+
+function upload_image_url(il){
+    image_edit("https://4d82-2603-7081-2c01-9937-61-e82a-e9a0-8b02.ngrok-free.app/" + il);
+}
+
+
+function image_edit(is){
     let image = new Image;
-    image.src = URL.createObjectURL(event.target.files[0]);
+    image.crossOrigin = "Anonymous";
+    image.src = is;
     image.onload = function() {
-        console.log(image.src);
         scale = Math.max(ctx.canvas.width / image.width, ctx.canvas.height / image.height);
         x = (ctx.canvas.width - (image.width * scale)) / 2;
         y = (ctx.canvas.height - (image.height * scale)) / 2;
@@ -22,14 +30,14 @@ function upload_image(event){
         
         let preview_image = new Image;
         let overlay_image = new Image;
+        preview_image.crossOrigin = "Anonymous";
         overlay_image.src = 'images/aa_logo.png';
         overlay_image.onload = function() {
             ctx.drawImage(overlay_image, (canvas.width / 2) - overlay_image.width / 2, (canvas.height / 2) - overlay_image.height / 2);
             link.download = 'wallpaper.png';
             canvas.toBlob(function(blob){
                 link.href = URL.createObjectURL(blob);
-                download_link = URL.createObjectURL(blob);
-                preview_image.src = download_link;
+                preview_image.src = URL.createObjectURL(blob);
             },'image/png');
         }
 
@@ -40,8 +48,8 @@ function upload_image(event){
             preview_ctx.drawImage(preview_image, x, y, preview_image.width * scale, preview_image.height * scale);
         }
     }
-    
 }
+
 
 function save_image() {
     console.log(1);
