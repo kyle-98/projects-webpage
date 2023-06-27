@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="styles/main_style.css">
     <link rel="stylesheet" href="styles/aawallpaper_style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://unpkg.com/merge-images"></script>
-    
   </head>
   <body>
     
@@ -44,7 +42,8 @@
                     <input type="file" accept="image/*" onchange="upload_image(event)" onclick="clear_canvas()">
                 </div>
                 <div id="file-path-wrapper">
-                    <input id="file-path" type="text">
+                    <input id="url-path" type="text">
+                    <input type="button" value="Submit" onclick="clear_canvas();upload_image_url(document.getElementById('url-path').value);">
                 </div>
             </div>
             <div id="dl-btn-div">
