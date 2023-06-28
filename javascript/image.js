@@ -13,14 +13,20 @@ function upload_image(event){
 }
 
 function upload_image_url(il){
-    image_edit("https://4d82-2603-7081-2c01-9937-61-e82a-e9a0-8b02.ngrok-free.app/" + il);
+    image_edit(il);
 }
 
 
 function image_edit(is){
     let image = new Image;
     image.crossOrigin = "Anonymous";
-    image.src = is;
+    fetch("https://6234-2603-7081-2c01-9937-61-e82a-e9a0-8b02.ngrok-free.app/" + is, {
+        method: "get",
+        headers: new Headers({
+          "ngrok-skip-browser-warning": "WeHateTheBadGuys",
+        }),
+      })
+        .then((data) => image.src = data.url)
     image.onload = function() {
         scale = Math.max(ctx.canvas.width / image.width, ctx.canvas.height / image.height);
         x = (ctx.canvas.width - (image.width * scale)) / 2;
