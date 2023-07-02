@@ -20,7 +20,7 @@ function upload_image_url(il){
 function image_edit(is){
     let image = new Image;
     image.crossOrigin = "Anonymous";
-    fetch("https://6234-2603-7081-2c01-9937-61-e82a-e9a0-8b02.ngrok-free.app/" + is, {
+    fetch("https://4627-2603-7081-2c01-9937-156-ce6f-dd46-5037.ngrok-free.app/" + is, {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "WeHateTheBadGuys",
