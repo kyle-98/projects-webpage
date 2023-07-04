@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ancient Aliens Wallpaper Generator</title>
-    <link rel="icon" type="image/x-icon" href="/images/ufo.png">
+    <link rel="icon" type="images/x-icon" href="/images/ufo.png">
     <link rel="stylesheet" href="styles/main_style.css">
     <link rel="stylesheet" href="styles/aawallpaper_style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -39,31 +39,29 @@
             <a id="img-link"></a>
             <div id="upload-field">
                 <div id="upload-btn">
-                    <input type="file" accept="image/*" onchange="upload_image(event)" onclick="clear_canvas()">
+                    <label id="file-upld-lbl" for="file-upld-btn">Choose File</label>
+                    <input id="file-upld-btn" type="file" accept="image/*" onchange="upload_image(event)" onclick="clear_canvas()">
                 </div>
+
+                <p>or</p>
+
                 <div id="file-path-wrapper">
                     <input id="url-path" type="text">
-                    <input type="button" value="Submit" onclick="clear_canvas();upload_image_url(document.getElementById('url-path').value);">
+                    <input id="submit-btn" type="button" value="Submit" onclick="clear_canvas();upload_image_url(document.getElementById('url-path').value);">
                 </div>
             </div>
             <div id="dl-btn-div">
                 <input id="dl-btn" type="button" value="Download" onclick="save_image()">
-        </div>
+            </div>
         
-        <script>
-            document.getElementById('dl-btn').disabled = true;
-        </script>
-
-
-
+          <script>
+              document.getElementById('dl-btn').disabled = true;
+          </script>
         </div>
+
         <div id="image-preview">
             <canvas id="preview-canvas" width="1358" height="764"></canvas>
         </div>
-
-
-
-        
 
         <!-- image manipulation -->
         <script src="javascript/image.js"></script>
