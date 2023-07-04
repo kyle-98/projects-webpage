@@ -107,3 +107,10 @@ body:focus{outline: none;}
 .mobile-menu{
     display:none;
 }
+
+/* random reaction image */
+#r-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
