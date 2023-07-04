@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="styles/main_style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
-  <body>
+
+  <script>
+    function chooseImage() {
+      var x = Math.floor((Math.random() * 4) + 1);
+      document.getElementById('reaction-image').src = `images/r_${x}.png`;
+    }
+  </script>
+
+  <body onload="chooseImage()">
     
     <div id="title-bar">
       <div class="header" id="header">
@@ -34,11 +42,9 @@
     </div>
 
     <div id="main-content">
-      
+      <div id="r-img">
+        <img id="reaction-image" src="" width="360" height="360">
+      </div>
     </div>
-
-
-
-	
   </body>
 </html>
