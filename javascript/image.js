@@ -9,24 +9,27 @@ var scale, x, y;
 let link = document.getElementById('img-link');
 
 function upload_image(event){
-    image_edit(URL.createObjectURL(event.target.files[0]));
+    image_edit(URL.createObjectURL(event.target.files[0]), 0);
 }
 
 function upload_image_url(il){
-    image_edit(il);
+    image_edit(il, 1);
 }
 
-
-function image_edit(is){
+function image_edit(is, choice){
     let image = new Image;
     image.crossOrigin = "Anonymous";
-    fetch("https://4627-2603-7081-2c01-9937-156-ce6f-dd46-5037.ngrok-free.app/" + is, {
+    if(choice == 0){
+        image.src = is;
+    } else {
+        fetch("https://4627-2603-7081-2c01-9937-156-ce6f-dd46-5037.ngrok-free.app/" + is, {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "WeHateTheBadGuys",
         }),
       })
         .then((data) => image.src = data.url)
+    }
     image.onload = function() {
         scale = Math.max(ctx.canvas.width / image.width, ctx.canvas.height / image.height);
         x = (ctx.canvas.width - (image.width * scale)) / 2;
@@ -55,7 +58,6 @@ function image_edit(is){
         }
     }
 }
-
 
 function save_image() {
     console.log(1);
