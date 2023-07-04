@@ -5,3 +5,101 @@
 #edit-canvas{
     display: none;
 }
+
+
+
+/* Url Entry */
+#url-path{
+    background-color: rgb(57, 57, 57);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+/* Buttons */
+#submit-btn {
+    background-color: #b163df;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#submit-btn:hover{
+    background-color: #62367c;
+}
+
+#dl-btn{
+    background-color: #b163df;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#dl-btn:hover{
+    background-color: #62367c;
+}
+
+
+#file-upld-lbl{
+    cursor: pointer;
+    background-color: #b163df;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#file-upld-lbl:hover{
+    background-color: #62367c;
+}
+#file-upld-btn{
+    opacity: 0;
+    z-index: -1;
+}
+
+/* main content */
+#file-stuff{
+    display: flex;
+    justify-content: space-evenly;
+}
+#upload-field{
+    display: flex;
+    align-items: baseline;
+}
+#upload-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+}
+#file-path-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+#dl-btn-div{
+    display: flex;
+    align-items: center;
+}
+p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* preview canvas */
+#image-preview{
+    display: flex;
+    justify-content: center;
+}
