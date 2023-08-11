@@ -22,7 +22,7 @@ function image_edit(is, choice){
     if(choice == 0){
         image.src = is;
     } else {
-        fetch("https://4627-2603-7081-2c01-9937-156-ce6f-dd46-5037.ngrok-free.app/" + is, {
+        fetch("https://8e46-2603-7081-2c01-9937-3823-aeb0-da52-27fd.ngrok-free.app/" + is, {
         method: "get",
         headers: new Headers({
           "ngrok-skip-browser-warning": "WeHateTheBadGuys",
