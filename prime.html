@@ -58,7 +58,7 @@
         #qrcode {
             margin-top: 20px;
             display: inline-block;
-            border: 1px solid rgb(177,99,223);
+            border: 1px solid rgb(255, 255, 255);
         }
 
         #qrcode canvas {
@@ -79,6 +79,14 @@
         
         #nav-bar {
             padding-bottom: 50px;
+        }
+
+        #qr-code-container {
+            display: none;
+            padding: 30px 50px 50px 50px;
+            background-color: rgb(0, 255, 0);
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
     </style>
 
@@ -114,7 +122,9 @@
         <br>
         <div id="bottom-container">
             <button id="generate">Generate QR Code</button>
-        <div id="qrcode"></div>
+        <div id="qr-code-container">
+            <div id="qrcode"></div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
         <script>
@@ -147,8 +157,10 @@
                         height: 700,
                         correctLevel: QRCode.CorrectLevel.M
                     });
+                    document.getElementById('qr-code-container').style.display = 'block';
                 } else {
                     alert("Please enter text to generate a QR code.");
+                    document.getElementById('qr-code-container').style.display = 'none';
                 }
             });
         </script>
